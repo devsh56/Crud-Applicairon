@@ -1,0 +1,77 @@
+﻿@model WebApplication1.Models.Student
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+
+        .btn-custom {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+            .btn-custom:hover {
+                background-color: #495057;
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title"> Edit User Information</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="Id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="Id" placeholder="Enter your name" required asp-for="Id" readonly>
+            </div>
+            <!-- Name Field -->
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="Name" placeholder="Enter your name" required asp-for="Name">
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required asp-for="email">
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone_number" placeholder="Enter your phone number" required asp-for="phone_number">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-custom w-100">Submit</button>
+            <button type="submit" class="btn btn-danger" asp-controller="Student" asp-action="Delete">Delete</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
